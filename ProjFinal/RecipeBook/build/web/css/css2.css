@@ -1,0 +1,14 @@
+@charset "UTF-8";
+*{padding: 0%;margin: 0%;box-sizing: border-box;}
+
+
+#main {width: 100%;height: 120%;position:absolute;background-color:#f5061d;display: block;}
+header {display: flex;}
+.logo {width: 150px;height: auto;}
+h1{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size: 50px;margin-top: 50px;color: #ffb300;}
+fieldset{width: 500px;height: 470px;display: flex;align-items: center;justify-self: center;border: 3px solid;border-color: #940533;border-radius: 20px;}
+input {display: block;width: 200px;height: 40px;border-radius: 20px;margin-left: 125px;margin-bottom: 10px;}
+label{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;color: #ffb300;margin-left: 125px;}
+legend{color: #ffb300;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+h2 {font-size: 20px;padding-top: 10px;padding-left: 20px;}
+
