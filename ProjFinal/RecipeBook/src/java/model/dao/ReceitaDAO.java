@@ -1,6 +1,5 @@
 package model.dao;
 
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +17,7 @@ public class ReceitaDAO {
 
     public void cadastrarReceita(Receita objReceita) {
         this.conexao = new ConexaoBD().getConexao();
-        String sql = "insert into tb_receita(nome,descricao,tempo_preparo,rendimento,ingredientes,modo_preparo)"
+        String sql = "insert into tb_receitas(nome,descricao,tempo_preparo,rendimento,ingredientes,modo_preparo)"
                 + "values(?,?,?,?,?,?)";
         try {
             this.ps = this.conexao.prepareStatement(sql);
@@ -37,10 +36,10 @@ public class ReceitaDAO {
         }
     }
 
-public ArrayList<Receita> listarReceitas() {
+    public ArrayList<Receita> listarReceitas() {
         this.conexao = new ConexaoBD().getConexao();
-        String sql = "SELECT * FROM tb_receita";
-        ArrayList<Receita> livroDeReceitas = new ArrayList<>();
+        String sql = "SELECT * FROM tb_receitas";
+        ArrayList<Receita> livroReceitas = new ArrayList<>();
 
         try {
             this.ps = this.conexao.prepareStatement(sql);
@@ -54,15 +53,58 @@ public ArrayList<Receita> listarReceitas() {
                 objReceita.setDescricao(this.resultado.getString("descricao"));
                 objReceita.setTempo_preparo(this.resultado.getInt("tempo_preparo"));
                 objReceita.setRendimento(this.resultado.getInt("rendimento"));
-                objReceita.setIngredientes(this.resultado.getString("rendimento"));
+                objReceita.setIngredientes(this.resultado.getString("ingredientes"));
                 objReceita.setModo_preparo(this.resultado.getString("modo_preparo"));
 
-                livroDeReceitas.add(objReceita);
+                livroReceitas.add(objReceita);
             }
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Erro ao listar do banco - classe ReceitaDAO - método listarReceita() - Erro: " + e);
         }
-        return livroDeReceitas;
+        return livroReceitas;
+    }
+
+    public void editarReceita(Receita objReceita) {
+        this.conexao = new ConexaoBD().getConexao();
+        String sql = "update tb_receitas "
+                + "set nome=?,descricao=?,tempo_preparo=?,rendimento=?,ingredientes=?,modo_preparo=?"
+                + "where id_receita=?";
+
+        try {
+            this.ps = this.conexao.prepareStatement(sql);
+            this.ps.setString(1, objReceita.getNome());
+            this.ps.setString(2, objReceita.getDescricao());
+            this.ps.setDouble(3, objReceita.getTempo_preparo());
+            this.ps.setDouble(4, objReceita.getRendimento());
+            this.ps.setString(5, objReceita.getIngredientes());
+            this.ps.setString(6, objReceita.getModo_preparo());
+            this.ps.setInt(7, objReceita.getId());
+
+            this.ps.execute();
+            this.ps.close();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar no banco - classe ContatoDAO - método alterarContato() - Erro: " + e);
+        }
+    }
+
+    public void excluirReceita(Receita objReceita) {
+        this.conexao = new ConexaoBD().getConexao();
+        String sql = "delete from tb_receitas "
+                + "where id_receita = ?";
+
+        try {
+            this.ps = this.conexao.prepareStatement(sql);
+            this.ps.setInt(1, objReceita.getId());
+
+            this.ps.execute();
+            this.ps.close();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar no banco - classe ContatoDAO - método excluirContato() - Erro: " + e);
+        }
     }
 }
+
+

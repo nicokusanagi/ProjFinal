@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/web/views/cadastrar_receita.jsp</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/src/java/model/dao/ReceitaDAO.java</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/src/java/model/conexaobd/ConexaoBD.java</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/web/controller/cadastrar.jsp</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/web/index.html</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/web/views/livro.jsp</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/web/controller/editar.jsp</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/web/controller/excluir.jsp</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/src/java/model/dto/Receita.java</file>
+            <file>file:/C:/Users/Maxinformatica/Desktop/ProjFinal/RecipeBook/web/views/editar_page.jsp</file>
+        </group>
     </open-files>
 </project-private>
